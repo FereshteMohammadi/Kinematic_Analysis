@@ -7,12 +7,12 @@ clear;
 clc;
 
 %% Initial value
-% i_v = initial_value();
-i_v = [0.1; 0.2; -1; pi/6; 0; 20; 101];
+i_v = initial_value();
+% i_v = [0.1; 0.2; -1; pi/6; 0; 20; 101];
 time = linspace(i_v(5), i_v(6), i_v(7));
 error = 1e-9;
 
-%% Find initial theta and d
+%% Find initial theta
 syms theta d
 
 F1 = i_v(1) * cos(i_v(4)) + i_v(2) * cos(theta) - d;
@@ -66,9 +66,3 @@ subplot(3,1,3);
 plot(time, ddQ(7,:), 'LineWidth', 2); % acceleration of slider
 ylabel("Acceleration of slider")
 xlabel("Time")
-
-
-
-
-
-
